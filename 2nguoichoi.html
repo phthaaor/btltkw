@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chế độ - 2 người chơi</title>
+  <link rel="stylesheet" href="hienthi.css">
+  <script src="main.js"></script>
+</head>
+<body>
+  <header>
+    <div class="head-left">
+        <a href="index.html">
+          <img src="image/logo.png" alt="Trang chủ">
+        </a>
+    </div>
+    <div class="hamburger-menu" id="hamburger-menu">☰</div>
+    <div class="head-center">
+      <a href="index.html">Trang chủ</a>
+      <div class="genre">
+        <p class="genre-btn">Thể loại <span class="arrow">▼</span></p>
+        <div class="genre-content">
+          <a href="nấu ăn.html">Nấu ăn</a>
+          <a href="thời trang.html">Thời trang</a>
+          <a href="trang điểm.html">Trang điểm</a>
+          <a href="đua xe.html">Đua xe</a>
+          <a href="hành động.html">Hành động</a>
+          <a href="kinh dị.html">Kinh dị</a>
+          <a href="trí tuệ.html">Trí tuệ</a>
+          <a href="thể thao.html">Thể thao</a>
+        </div>
+      </div>
+
+      <div class="mode">
+        <p class="mode-btn">Chế độ <span class="arrow">▼</span></p>
+        <div class="mode-content">
+          <a href="1nguoichoi.html">1 người chơi</a>
+          <a href="2nguoichoi.html">2 người chơi</a>
+        </div>
+      </div>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Tìm kiếm..." aria-label="Tìm kiếm">
+      <button onclick="searchGames()">Tìm</button>
+    </div>
+    <div class="head-right">
+                <span id="chao-mung"></span>
+                <button id="btn-dang-nhap" onclick="location.href='dangnhap.html'">Đăng nhập</button>
+                <button id="btn-dang-ky" onclick="location.href='dangki.html'">Đăng ký</button>
+                <button id="btn-dang-xuat" style="display: none;">Đăng xuất</button>
+            </div>
+            <script>
+            window.onload = function () {
+                const trangThai = sessionStorage.getItem("trangthai");
+                const tenDangNhap = sessionStorage.getItem("tk");
+
+                const btnDangNhap = document.getElementById("btn-dang-nhap");
+                const btnDangKy = document.getElementById("btn-dang-ky");
+                const btnDangXuat = document.getElementById("btn-dang-xuat");
+                const chaoMung = document.getElementById("chao-mung");
+
+                if (trangThai === "hien" && tenDangNhap) {
+                    btnDangNhap.style.display = "none";
+                    btnDangKy.style.display = "none";
+                    btnDangXuat.style.display = "inline-block";
+                    chaoMung.innerText = "Chào, " + tenDangNhap;
+                } else {
+                    btnDangNhap.style.display = "inline-block";
+                    btnDangKy.style.display = "inline-block";
+                    btnDangXuat.style.display = "none";
+                    chaoMung.innerText = "";
+                }
+
+                btnDangXuat.addEventListener("click", function () {
+                    sessionStorage.clear();
+                    alert("Đăng xuất thành công!");
+                    location.reload();
+                });
+            };
+            </script>
+  </header>
+
+  <div class="category-card cooking">
+    <div class="category-info">
+      <h2>2 người chơi</h2>
+      <p>450 game</p>
+    </div>
+    <img src="" alt="">
+  </div>
+
+
+  <main class="game-grid">
+    <div class="game-card">
+      <img src="image/đua xe/đx1.jpg" alt="Game 1">
+      <div class="game-info">
+        <p title="City Car Stunt 3">City Car Stunt 3</p>
+        <a href="https://vi.y8.com/games/city_car_stunt_3" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/hành động/hd2.jpg" alt="Game 2">
+      <div class="game-info">
+        <p title="Valorant">Valorant </p>
+        <a href="https://playvalorant.com/vi-vn/" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/hành động/hd3.jpg" alt="Game 3">
+      <div class="game-info">
+        <p title="Warzone Getaway 2020"> Warzone Getaway 2020</p>
+        <a href="https://vi.y8.com/games/warzone_getaway_2020" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/hành động/hd4.jpg" alt="Game 4">
+      <div class="game-info">
+        <p title="Tomb Runner">Tomb Runner </p>
+        <a href="https://vi.y8.com/games/tomb_runner" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/hành động/hd5.jpg" alt="Game 5">
+      <div class="game-info">
+        <p title="BMO: Play Along with Me">BMO: Play Along with Me </p>
+        <a href="https://vi.y8.com/games/bmo_play_along_with_me" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/hành động/hd6.jpg" alt="Game 6">
+      <div class="game-info">
+        <p title="Fireboy and Watergirl in the Ice Temple">Fireboy and Watergirl in the Ice Temple </p>
+        <a href="https://vi.y8.com/games/fireboy_and_watergirl_in_the_ice_temple" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/hành động/hd7.jpg" alt="Game 7">
+      <div class="game-info">
+        <p title="Rise of the Dead">Rise of the Dead </p>
+        <a href="https://vi.y8.com/games/rise_of_the_dead" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/hành động/hd8.jpg" alt="Game 8">
+      <div class="game-info">
+        <p title="Arcane Archer ">Arcane Archer </p>
+        <a href="https://vi.y8.com/games/arcane_archer" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/hành động/hd9.jpg" alt="Game 9">
+      <div class="game-info">
+        <p title="Rail Slide">Rail Slide </p>
+        <a href="https://vi.y8.com/games/rail_slide" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/hành động/hd11.jpg" alt="Game 10">
+      <div class="game-info">
+        <p title="Parkour Craft">Parkour Craft</p>
+        <a href="https://vi.y8.com/games/parkour_craft" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/hành động/hd12.jpg" alt="Game 11">
+      <div class="game-info">
+        <p title="Black Meow Ninja">Black Meow Ninja</p>
+        <a href="https://vi.y8.com/games/black_meow_ninja" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd1.jpg" alt="Game 12">
+      <div class="game-info">
+        <p title="Zombie Sacrifice">Zombie Sacrifice</p>
+        <a href="https://www.y8.com/games/zombie_sacrifice" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd2.jpg" alt="Game 13">
+      <div class="game-info">
+        <p title="The Malevolent Mansion of Evil">The Malevolent Mansion of Evil</p>
+        <a href="https://www.y8.com/games/the_malevolent_mansion_of_evil" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd3.jpg" alt="Game 14">
+      <div class="game-info">
+        <p title="Slendrina Must Die: The School">Slendrina Must Die: The School</p>
+        <a href="https://www.y8.com/games/slendrina_must_die_the_school" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd4.jpg" alt="Game 15">
+      <div class="game-info">
+        <p title="The House Of Evil Granny">The House Of Evil Granny</p>
+        <a href="https://www.y8.com/games/the_house_of_evil_granny" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd5.jpg" alt="Game 16">
+      <div class="game-info">
+        <p title="Forest Monsters">Forest Monsters</p>
+        <a href="https://www.y8.com/games/forest_monsters" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd6.jpg" alt="Game 17">
+      <div class="game-info">
+        <p title="Darkness in spaceship">Darkness in spaceship</p>
+        <a href="https://www.y8.com/games/darkness_in_spaceship" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd7.jpg" alt="Game 18">
+      <div class="game-info">
+        <p title="Jeff The Killer - Horrendous Smile">Jeff The Killer - Horrendous Smile</p>
+        <a href="https://www.y8.com/games/jeff_the_killer_horrendous_smile" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd8.jpg" alt="Game 19">
+      <div class="game-info">
+        <p title="Shoot Your Nightmare: The Beginning">Shoot Your Nightmare: The Beginning</p>
+        <a href="https://www.y8.com/games/shoot_your_nightmare_the_beginning" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd9.jpg" alt="Game 20">
+      <div class="game-info">
+        <p title="Zombie Island 3D">Zombie Island 3D</p>
+        <a href="https://www.y8.com/games/zombie_island_3d" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd10.jpg" alt="Game 21">
+      <div class="game-info">
+        <p title="Toys Shooter: You Vs Zombies">Toys Shooter: You Vs Zombies</p>
+        <a href="https://www.y8.com/games/toys_shooter_you_vs_zombies" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd11.jpg" alt="Game 22">
+      <div class="game-info">
+        <p title="Ghost City">Ghost City</p>
+        <a href="https://www.y8.com/games/ghost_city" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd12.jpg" alt="Game 23">
+      <div class="game-info">
+        <p title="Cave War">Cave War</p>
+        <a href="https://www.y8.com/games/cave_war" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trí tuệ/tt1.jpg" alt="Game 24">
+      <div class="game-info">
+        <p title=”Hangman">Hangman </p>
+        <a href="https://www.y8.com/games/hangman_game" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trí tuệ/tt3.jpg" alt="Game 25">
+      <div class="game-info">
+        <p title=”Master Chess">Master Chess </p>
+        <a href="https://vi.y8.com/games/master_chess" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trí tuệ/tt4.jpg" alt="Game 26">
+      <div class="game-info">
+        <p title=”Math Puzzles">Math Puzzles </p>
+        <a href="https://vi.y8.com/games/math_puzzles" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trí tuệ/tt5.jpg" alt="Game 27">
+      <div class="game-info">
+        <p title=”Relaxing Bus Trip">Relaxing Bus Trip </p>
+        <a href="https://vi.y8.com/games/relaxing_bus_trip" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trí tuệ/tt6.jpg" alt="Game 28">
+      <div class="game-info">
+        <p title=”Unpuzzle">Unpuzzle </p>
+        <a href="https://vi.y8.com/games/unpuzzle" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trí tuệ/tt7.jpg" alt="Game 29">
+      <div class="game-info">
+        <p title=”Save The Doge 2">Save The Doge 2 </p>
+        <a href="https://vi.y8.com/games/save_the_doge_2" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trí tuệ/tt8.jpg" alt="Game 30">
+      <div class="game-info">
+        <p title=”MaZe">MaZe </p>
+        <a href="https://vi.y8.com/games/maze" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trí tuệ/tt9.jpg" alt="Game 31">
+      <div class="game-info">
+        <p title=”Balls Shooter">Balls Shooter </p>
+        <a href="https://vi.y8.com/games/balls_shooter" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trí tuệ/tt10.jpg" alt="Game 32">
+      <div class="game-info">
+        <p title=”The Big Quiz">The Big Quiz </p>
+        <a href="https://www.y8.com/games/hangman_game" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trí tuệ/tt11.jpg" alt="Game 33">
+      <div class="game-info">
+        <p title=”Word Cross">Word Cross </p>
+        <a href="https://vi.y8.com/games/word_cross" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trí tuệ/tt12.jpg" alt="Game 34">
+      <div class="game-info">
+        <p title=”Quiz X">Quiz X </p>
+        <a href="https://vi.y8.com/games/quiz_x" class="play-btn">Chơi</a>
+      </div>
+    </div>
+      <div class="game-card">
+      <img src="image/thể thao/tthao1.jpg" alt="Game 35">
+      <div class="game-info">
+        <p title="8 Ball Billiards Classic">8 Ball Billiards Classic</p>
+        <a href="https://vi.y8.com/games/8_ball_billiards_classic" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/thể thao/tthao2.jpg" alt="Game 36">
+      <div class="game-info">
+        <p title=”Toon Cup 2016">Toon Cup 2016</p>
+        <a href="https://vi.y8.com/games/toon_cup_2016" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/thể thao/tthao3.jpg" alt="Game 37">
+      <div class="game-info">
+        <p title=”Table Tennis- World Tour">Table Tennis- World Tour </p>
+        <a href="https://vi.y8.com/games/table_tennis-_world_tour" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/thể thao/tthao4.jpg" alt="Game 38">
+      <div class="game-info">
+        <p title=”Archery Master">Archery Master </p>
+        <a href="https://vi.y8.com/games/archery_master_" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/thể thao/tthao5.jpg" alt="Game 39">
+      <div class="game-info">
+        <p title=”Hurdles">Hurdles </p>
+        <a href="https://vi.y8.com/games/archery_master_" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/thể thao/tthao6.jpg" alt="Game 40">
+      <div class="game-info">
+        <p title=”Table Tennis Ultra Mega Tournament">Table Tennis Ultra Mega Tournament </p>
+        <a href="https://vi.y8.com/games/table_tennis_ultra_mega_tournament" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/thể thao/tthao7.jpg" alt="Game 41">
+      <div class="game-info">
+        <p title=”Rugby Run 2023">Rugby Run 2023 </p>
+        <a href="https://vi.y8.com/games/rugby_run_2023" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/thể thao/tthao8.jpg" alt="Game 42">
+      <div class="game-info">
+        <p title=”Penalty Shooters 2"> </p>
+        <a href="https://vi.y8.com/games/penalty_shooters_2" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/thể thao/tthao9.jpg" alt="Game 43">
+      <div class="game-info">
+        <p title=”Basketball">Basketball </p>
+        <a href="https://vi.y8.com/games/basketball_2d" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/thể thao/tthao10.jpg" alt="Game 44">
+      <div class="game-info">
+        <p title=”Home Run Master">Home Run Master </p>
+        <a href="https://vi.y8.com/games/home_run_master" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/thể thao/tthao11.jpg" alt="Game 45">
+      <div class="game-info">
+        <p title=”Blumgi Ball">Blumgi Ball </p>
+        <a href="https://vi.y8.com/games/blumgi_ball" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/thể thao/tthao12.jpg" alt="Game 46">
+      <div class="game-info">
+        <p title=”Power Badminton">Power Badminton </p>
+        <a href="https://vi.y8.com/games/power_badminton" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+     <img src="image/trang điểm/td 5.jpg" alt="Game 47">
+     <div class="game-info">
+       <p title="Enchanted Unicorn Spa">Enchanted Unicorn Spa</p>
+       <a href="https://gamevui.vn/trang-diem-cho-ngua/game" class="play-btn">Chơi</a>
+     </div>
+   </div>
+    <div class="game-card">
+     <img src="image/trang điểm/td 6.jpg" alt="Game 48">
+     <div class="game-info">
+       <p title="Design Elsa Halloween Costume">Design Elsa Halloween Costume</p>
+       <a href="https://gamevui.vn/elsa-trang-diem-halloween/game" class="play-btn">Chơi</a>
+     </div>
+   </div>
+    <div class="game-card">
+     <img src="image/trang điểm/td 7.jpg" alt="Game 49">
+     <div class="game-info">
+       <p title="Trang điểm ngày 8/3 – Rapunzel's Doll Outfit">Trang điểm ngày 8/3 – Rapunzel's Doll Outfit</p>
+       <a href="https://gamevui.vn/trang-diem-ngay-83/game" class="play-btn">Chơi</a>
+     </div>
+   </div>
+   <div class="game-card">
+     <img src="image/thời trang/tt 11.jpg" alt="Game 50">
+     <div class="game-info">
+       <p title="Barbie Colorful Swimsuits Dress Up">Barbie Colorful Swimsuits Dress Up</p>
+       <a href="https://gamevui.vn/thoi-trang-tam-bien/game" class="play-btn">Chơi</a>
+     </div>
+   </div>
+</main>
+</body>
+<footer>
+        <div class="contact-info">
+            <h3>Liên Hệ Với Chúng Tôi</h3>
+            <p>Email: <a href="mailto:infoiteral System: @example.com">info@example.com</a></p>
+            <p>Số điện thoại: <a href="tel:+84912345678">+84 912 345 678</a></p>
+            <p>Địa chỉ: Số 98 phố Dương Quảng Hàm, quận Cầu Giấy, Hà Nội </p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/hnmu.edu.vn" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/hnmu_bc/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                </a>
+                <a href="https://hnmu.edu.vn/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo">
+                </a>
+            </div>
+        </div>
+    </footer>
+</html>
+
+

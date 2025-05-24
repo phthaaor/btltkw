@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thể loại - Nấu ăn</title>
+  <link rel="stylesheet" href="hienthi.css">
+  <script src="main.js"></script>
+</head>
+<body>
+  <header>
+    <div class="head-left">
+        <a href="index.html">
+        <img src="image/logo.png" alt="Trang chủ">
+        </a>
+    </div>
+    <div class="hamburger-menu" id="hamburger-menu">☰</div>
+    <div class="head-center">
+      <a href="index.html">Trang chủ</a>
+      <div class="genre">
+        <p class="genre-btn">Thể loại <span class="arrow">▼</span></p>
+        <div class="genre-content">
+          <a href="nấu ăn.html">Nấu ăn</a>
+          <a href="thời trang.html">Thời trang</a>
+          <a href="trang điểm.html">Trang điểm</a>
+          <a href="đua xe.html">Đua xe</a>
+          <a href="hành động.html">Hành động</a>
+          <a href="kinh dị.html">Kinh dị</a>
+          <a href="trí tuệ.html">Trí tuệ</a>
+          <a href="thể thao.html">Thể thao</a>
+        </div>
+      </div>
+    
+      <div class="mode">
+        <p class="mode-btn">Chế độ <span class="arrow">▼</span></p>
+        <div class="mode-content">
+          <a href="1nguoichoi.html">1 người chơi</a>
+          <a href="2nguoichoi.html">2 người chơi</a>
+        </div>
+      </div>
+    </div>
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Tìm kiếm..." aria-label="Tìm kiếm">
+        <button onclick="searchGames()">Tìm</button>
+      </div>
+    <div class="head-right">
+                <span id="chao-mung"></span>
+                <button id="btn-dang-nhap" onclick="location.href='dangnhap.html'">Đăng nhập</button>
+                <button id="btn-dang-ky" onclick="location.href='dangki.html'">Đăng ký</button>
+                <button id="btn-dang-xuat" style="display: none;">Đăng xuất</button>
+            </div>
+            <script>
+            window.onload = function () {
+                const trangThai = sessionStorage.getItem("trangthai");
+                const tenDangNhap = sessionStorage.getItem("tk");
+
+                const btnDangNhap = document.getElementById("btn-dang-nhap");
+                const btnDangKy = document.getElementById("btn-dang-ky");
+                const btnDangXuat = document.getElementById("btn-dang-xuat");
+                const chaoMung = document.getElementById("chao-mung");
+
+                if (trangThai === "hien" && tenDangNhap) {
+                    btnDangNhap.style.display = "none";
+                    btnDangKy.style.display = "none";
+                    btnDangXuat.style.display = "inline-block";
+                    chaoMung.innerText = "Chào, " + tenDangNhap;
+                } else {
+                    btnDangNhap.style.display = "inline-block";
+                    btnDangKy.style.display = "inline-block";
+                    btnDangXuat.style.display = "none";
+                    chaoMung.innerText = "";
+                }
+
+                btnDangXuat.addEventListener("click", function () {
+                    sessionStorage.clear();
+                    alert("Đăng xuất thành công!");
+                    location.reload();
+                });
+            };
+            </script>
+  </header>
+
+  <div class="category-card">
+    <div class="category-info">
+      <h2>Nấu ăn</h2>
+      <p>120 game</p>
+    </div>
+    <img src="image/nấu ăn/nấu.jpg" alt="Nấu ăn">
+  </div>
+
+
+  <main class="game-grid">
+    <div class="game-card">
+      <img src="image/nấu ăn/na 1.png" alt="Game 1">
+      <div class="game-info">
+        <p title="Niu Cafe">Niu Cafe</p>
+        <a href="https://www.y8.com/games/niu_cafe" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/nấu ăn/na 2.jpg" alt="Game 2">
+      <div class="game-info">
+        <p title="Grandma Recipe Ramen">Grandma Recipe Ramen</p>
+        <a href="https://vi.y8.com/games/grandma_recipe_ramen" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/nấu ăn/na 3.jpg" alt="Game 3">
+      <div class="game-info">
+        <p title="Dessert DIY">Dessert DIY</p>
+        <a href="https://vi.y8.com/games/diy_dessert_cooking_master" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/nấu ăn/na 4.jpg" alt="Game 4">
+      <div class="game-info">
+        <p title="Roxie's Kitchen: Birthday Cake">Roxie's Kitchen: Birthday Cake</p>
+        <a href="https://vi.y8.com/games/roxie_kitchen_birthday_cake_for_mom" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/nấu ăn/na 5.jpg" alt="Game 5">
+      <div class="game-info">
+        <p title="Làm bánh cupcake socola mâm xôi">Làm bánh cupcake socola mâm xôi</p>
+        <a href="https://gamevui.vn/lam-banh-cupcake-socola-mam-xoi/game" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/nấu ăn/na 6.png" alt="Game 6">
+      <div class="game-info">
+        <p title="Mia Cooking Sushi">Mia Cooking Sushi</p>
+        <a href="https://www.y8.com/games/mia_cooking_sushi" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/nấu ăn/na 7.gif" alt="Game 7">
+      <div class="game-info">
+        <p title="Cooking Pizza Pockets">Cooking Pizza Pockets</p>
+        <a href="https://www.y8.com/games/cooking_pizza_pockets" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/nấu ăn/na 8.png" alt="Game 8">
+      <div class="game-info">
+        <p title="Cooking Gyros on The Beach">Cooking Gyros on The Beach</p>
+        <a href="https://www.y8.com/games/cooking_gyros_on_the_beach" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/nấu ăn/na 9.jpg" alt="Game 9">
+      <div class="game-info">
+        <p title="Sofia Cooking Princess Cake">Sofia Cooking Princess Cake</p>
+        <a href="https://www.y8.com/games/sofia_cooking_princess_cake" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/nấu ăn/na 10.png" alt="Game 10">
+      <div class="game-info">
+        <p title="Cooking Show: Cheese Omelette">Cooking Show: Cheese Omelette</p>
+        <a href="https://www.y8.com/games/cooking_show_cheese_omelette" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/nấu ăn/na 11.jpg" alt="Game 11">
+      <div class="game-info">
+        <p title="Tom Family Cooking Pancakes">Tom Family Cooking Pancakes</p>
+        <a href="https://www.y8.com/games/tom_family_cooking_pancakes" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/nấu ăn/na 12.jpg" alt="Game 12">
+      <div class="game-info">
+        <p title="Explore Cooking With Dora">Explore Cooking With Dora</p>
+        <a href="https://www.y8.com/games/explore_cooking_with_dora" class="play-btn">Chơi</a>
+      </div>
+    </div>
+  </main>
+</body>
+<footer>
+        <div class="contact-info">
+            <h3>Liên Hệ Với Chúng Tôi</h3>
+            <p>Email: <a href="mailto:infoiteral System: @example.com">info@example.com</a></p>
+            <p>Số điện thoại: <a href="tel:+84912345678">+84 912 345 678</a></p>
+            <p>Địa chỉ: Số 98 phố Dương Quảng Hàm, quận Cầu Giấy, Hà Nội </p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/hnmu.edu.vn" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/hnmu_bc/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                </a>
+                <a href="https://hnmu.edu.vn/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo">
+                </a>
+            </div>
+        </div>
+    </footer>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thể loại - Trang điểm</title>
+  <link rel="stylesheet" href="hienthi.css">
+  <script src="main.js"></script>
+</head>
+<body>
+  <header>
+    <div class="head-left">
+        <a href="index.html">
+        <img src="image/logo.png" alt="Trang chủ">
+        </a>
+    </div>
+    <div class="hamburger-menu" id="hamburger-menu">☰</div>
+    <div class="head-center">
+      <a href="index.html">Trang chủ</a>
+      <div class="genre">
+        <p class="genre-btn">Thể loại <span class="arrow">▼</span></p>
+        <div class="genre-content">
+          <a href="nấu ăn.html">Nấu ăn</a>
+          <a href="thời trang.html">Thời trang</a>
+          <a href="trang điểm.html">Trang điểm</a>
+          <a href="đua xe.html">Đua xe</a>
+          <a href="hành động.html">Hành động</a>
+          <a href="kinh dị.html">Kinh dị</a>
+          <a href="trí tuệ.html">Trí tuệ</a>
+          <a href="thể thao.html">Thể thao</a>
+        </div>
+      </div>
+
+      <div class="mode">
+        <p class="mode-btn">Chế độ <span class="arrow">▼</span></p>
+        <div class="mode-content">
+          <a href="1nguoichoi.html">1 người chơi</a>
+          <a href="2nguoichoi.html">2 người chơi</a>
+        </div>
+      </div>
+    </div>
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Tìm kiếm..." aria-label="Tìm kiếm">
+        <button onclick="searchGames()">Tìm</button>
+      </div>
+    <div class="head-right">
+                <span id="chao-mung"></span>
+                <button id="btn-dang-nhap" onclick="location.href='dangnhap.html'">Đăng nhập</button>
+                <button id="btn-dang-ky" onclick="location.href='dangki.html'">Đăng ký</button>
+                <button id="btn-dang-xuat" style="display: none;">Đăng xuất</button>
+            </div>
+            <script>
+            window.onload = function () {
+                const trangThai = sessionStorage.getItem("trangthai");
+                const tenDangNhap = sessionStorage.getItem("tk");
+
+                const btnDangNhap = document.getElementById("btn-dang-nhap");
+                const btnDangKy = document.getElementById("btn-dang-ky");
+                const btnDangXuat = document.getElementById("btn-dang-xuat");
+                const chaoMung = document.getElementById("chao-mung");
+
+                if (trangThai === "hien" && tenDangNhap) {
+                    btnDangNhap.style.display = "none";
+                    btnDangKy.style.display = "none";
+                    btnDangXuat.style.display = "inline-block";
+                    chaoMung.innerText = "Chào, " + tenDangNhap;
+                } else {
+                    btnDangNhap.style.display = "inline-block";
+                    btnDangKy.style.display = "inline-block";
+                    btnDangXuat.style.display = "none";
+                    chaoMung.innerText = "";
+                }
+
+                btnDangXuat.addEventListener("click", function () {
+                    sessionStorage.clear();
+                    alert("Đăng xuất thành công!");
+                    location.reload();
+                });
+            };
+            </script>
+  </header>
+
+  <div class="category-card cooking">
+    <div class="category-info">
+      <h2>Trang điểm</h2>
+      <p>120 game</p>
+    </div>
+    <img src="image/trang điểm/trang điểm.png" alt="Trang điểm">
+  </div>
+
+
+  <main class="game-grid">
+    <div class="game-card">
+      <img src="image/trang điểm/td 1.jpg" alt="Game 1">
+      <div class="game-info">
+        <p title="Autumn Bride Makeover">Autumn Bride Makeover</p>
+        <a href="https://gamevui.vn/trang-diem-co-dau/game" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trang điểm/td 2.jpg" alt="Game 2">
+      <div class="game-info">
+        <p title="Barbie Selfie Make Up">Barbie Selfie Make Up</p>
+        <a href="https://gamevui.vn/trang-diem-selfie/game" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trang điểm/td 3.jpg" alt="Game 3">
+      <div class="game-info">
+        <p title="Bậc thầy trang điểm">Bậc thầy trang điểm</p>
+        <a href="https://gamevui.vn/bac-thay-trang-diem/game" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trang điểm/td 4.jpg" alt="Game 4">
+      <div class="game-info">
+        <p title="Anna's Frozen Spa">Anna's Frozen Spa</p>
+        <a href="https://gamevui.vn/anna-lam-dep/game" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/thời trang/tt 5.jpg" alt="Game 5">
+      <div class="game-info">
+        <p title="Enchanted Unicorn Spa">Enchanted Unicorn Spa</p>
+        <a href="https://gamevui.vn/trang-diem-cho-ngua/game" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/thời trang/tt 6.jpg" alt="Game 6">
+      <div class="game-info">
+        <p title="Design Elsa Halloween Costume">Design Elsa Halloween Costume</p>
+        <a href="https://gamevui.vn/elsa-trang-diem-halloween/game" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trang điểm/td 7.jpg" alt="Game 7">
+      <div class="game-info">
+        <p title="Trang điểm ngày 8/3">Trang điểm ngày 8/3</p>
+        <a href="https://gamevui.vn/trang-diem-ngay-83/game" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trang điểm/td 8.jpg" alt="Game 8">
+      <div class="game-info">
+        <p title="Sofia Real Makeover">Sofia Real Makeover</p>
+        <a href="https://gamevui.vn/trang-diem-cho-sofia/game" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trang điểm/td 9.jpg" alt="Game 9">
+      <div class="game-info">
+        <p title="Meow Dress Up">Meow Dress Up</p>
+        <a href="https://gamevui.vn/lam-dep-cho-meo/game" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trang điểm/td 10.jpg" alt="Game 10">
+      <div class="game-info">
+        <p title="Flower Fairy Makeup Tutorial">Flower Fairy Makeup Tutorial</p>
+        <a href="https://gamevui.vn/trang-diem-hoa-tien-nu/game" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trang điểm/td 11.jpg" alt="Game 11">
+      <div class="game-info">
+        <p title="Hóa trang Carnival">Hóa trang Carnival</p>
+        <a href="https://gamevui.vn/hoa-trang-carnival/game" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trang điểm/td 12.jpg" alt="Game 12">
+      <div class="game-info">
+        <p title="Barbara Makeup Time">Barbara Makeup Time</p>
+        <a href="https://gamevui.vn/trang-diem-barbara/game" class="play-btn">Chơi</a>
+      </div>
+    </div>
+  </main>
+</body>
+<footer>
+        <div class="contact-info">
+            <h3>Liên Hệ Với Chúng Tôi</h3>
+            <p>Email: <a href="mailto:infoiteral System: @example.com">info@example.com</a></p>
+            <p>Số điện thoại: <a href="tel:+84912345678">+84 912 345 678</a></p>
+            <p>Địa chỉ: Số 98 phố Dương Quảng Hàm, quận Cầu Giấy, Hà Nội </p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/hnmu.edu.vn" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/hnmu_bc/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                </a>
+                <a href="https://hnmu.edu.vn/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo">
+                </a>
+            </div>
+        </div>
+    </footer>
+</html>

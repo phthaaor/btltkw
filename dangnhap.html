@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="khung form.css">
+</head>
+<body>
+<div class="khung_form">
+    <h2>Đăng Nhập</h2>
+    <input type="text" id="ten_dang_nhap" placeholder="Tên đăng nhập"><br>
+    <span id="usertb" style="color: red;"></span><br>
+
+    <input type="password" id="mat_khau" placeholder="Mật khẩu"><br>
+    <span id="passtb" style="color: red;"></span><br>
+
+    <button onclick="dangNhap()">Đăng Nhập</button>
+</div>
+
+<script>
+function dangNhap() {
+    const user = document.getElementById("ten_dang_nhap").value.trim();
+    const pass = document.getElementById("mat_khau").value.trim();
+
+    const tk = sessionStorage.getItem("tk");
+    const mk = sessionStorage.getItem("mk");
+
+    if (user === "" || pass === "") {
+        document.getElementById("passtb").innerText = "Vui lòng nhập đầy đủ thông tin";
+        return;
+    }
+
+    if (user === tk && pass === mk) {
+        sessionStorage.setItem("trangthai", "hien");
+        alert("Đăng nhập thành công!");
+        window.location.href = "index.html";
+    } else {
+        document.getElementById("passtb").innerText = "Tài khoản hoặc mật khẩu không đúng";
+    }
+}
+</script>
+</body>
+</html>

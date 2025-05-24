@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thể loại - Trí tuệ</title>
+  <link rel="stylesheet" href="hienthi.css">
+  <script src="main.js"></script>
+</head>
+<body>
+  <header>
+    <div class="head-left">
+        <a href="index.html">
+        <img src="image/logo.png" alt="Trang chủ">
+        </a>
+    </div>
+    <div class="hamburger-menu" id="hamburger-menu">☰</div>
+    <div class="head-center">
+      <a href="index.html">Trang chủ</a>
+      <div class="genre">
+        <p class="genre-btn">Thể loại <span class="arrow">▼</span></p>
+        <div class="genre-content">
+          <a href="nấu ăn.html">Nấu ăn</a>
+          <a href="thời trang.html">Thời trang</a>
+          <a href="trang điểm.html">Trang điểm</a>
+          <a href="đua xe.html">Đua xe</a>
+          <a href="hành động.html">Hành động</a>
+          <a href="kinh dị.html">Kinh dị</a>
+          <a href="trí tuệ.html">Trí tuệ</a>
+          <a href="thể thao.html">Thể thao</a>
+        </div>
+      </div>
+
+      <div class="mode">
+        <p class="mode-btn">Chế độ <span class="arrow">▼</span></p>
+        <div class="mode-content">
+          <a href="1nguoichoi.html">1 người chơi</a>
+          <a href="2nguoichoi.html">2 người chơi</a>
+        </div>
+      </div>
+    </div>
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Tìm kiếm..." aria-label="Tìm kiếm">
+        <button onclick="searchGames()">Tìm</button>
+      </div>
+    <div class="head-right">
+                <span id="chao-mung"></span>
+                <button id="btn-dang-nhap" onclick="location.href='dangnhap.html'">Đăng nhập</button>
+                <button id="btn-dang-ky" onclick="location.href='dangki.html'">Đăng ký</button>
+                <button id="btn-dang-xuat" style="display: none;">Đăng xuất</button>
+            </div>
+            <script>
+            window.onload = function () {
+                const trangThai = sessionStorage.getItem("trangthai");
+                const tenDangNhap = sessionStorage.getItem("tk");
+
+                const btnDangNhap = document.getElementById("btn-dang-nhap");
+                const btnDangKy = document.getElementById("btn-dang-ky");
+                const btnDangXuat = document.getElementById("btn-dang-xuat");
+                const chaoMung = document.getElementById("chao-mung");
+
+                if (trangThai === "hien" && tenDangNhap) {
+                    btnDangNhap.style.display = "none";
+                    btnDangKy.style.display = "none";
+                    btnDangXuat.style.display = "inline-block";
+                    chaoMung.innerText = "Chào, " + tenDangNhap;
+                } else {
+                    btnDangNhap.style.display = "inline-block";
+                    btnDangKy.style.display = "inline-block";
+                    btnDangXuat.style.display = "none";
+                    chaoMung.innerText = "";
+                }
+
+                btnDangXuat.addEventListener("click", function () {
+                    sessionStorage.clear();
+                    alert("Đăng xuất thành công!");
+                    location.reload();
+                });
+            };
+            </script>
+  </header>
+
+  <div class="category-card cooking">
+    <div class="category-info">
+      <h2>Trí tuệ</h2>
+      <p>120 game</p>
+    </div>
+    <img src="image/trí tuệ/trí tuệ.jpg" alt="Trí tuệ">
+  </div>
+
+
+  <main class="game-grid">
+    <div class="game-card">
+      <img src="image/trí tuệ/tt1.jpg" alt="Game 1">
+      <div class="game-info">
+        <p title="Minecraft">Minecraft</p>
+        <a href="http://Y8.com" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trí tuệ/tt2.jpg" alt="Game 2">
+      <div class="game-info">
+        <p title="Hangman">Hangman</p>
+        <a href="https://www.y8.com/games/hangman_game" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trí tuệ/tt3.jpg" alt="Game 3">
+      <div class="game-info">
+        <p title="Master Chess">Master Chess</p>
+        <a href="https://vi.y8.com/games/master_chess" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trí tuệ/tt4.jpg" alt="Game 4">
+      <div class="game-info">
+        <p title="Math Puzzles">Math Puzzles</p>
+        <a href="https://vi.y8.com/games/math_puzzles" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trí tuệ/tt5.jpg" alt="Game 5">
+      <div class="game-info">
+        <p title="Relaxing Bus Trip">Relaxing Bus Trip</p>
+        <a href="https://vi.y8.com/games/relaxing_bus_trip" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trí tuệ/tt6.jpg" alt="Game 6">
+      <div class="game-info">
+        <p title="Unpuzzle">Unpuzzle</p>
+        <a href="https://vi.y8.com/games/unpuzzle" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trí tuệ/tt7.jpg" alt="Game 7">
+      <div class="game-info">
+        <p title="Save The Doge 2">Save The Doge 2</p>
+        <a href="https://vi.y8.com/games/save_the_doge_2" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trí tuệ/tt8.jpg" alt="Game 8">
+      <div class="game-info">
+        <p title="MaZe">MaZe</p>
+        <a href="https://vi.y8.com/games/maze" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trí tuệ/tt9.jpg" alt="Game 9">
+      <div class="game-info">
+        <p title="Balls Shooter">Balls Shooter</p>
+        <a href="https://vi.y8.com/games/balls_shooter" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trí tuệ/tt10.jpg" alt="Game 10">
+      <div class="game-info">
+        <p title="The Big Quiz">The Big Quiz</p>
+        <a href="https://www.y8.com/games/hangman_game" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trí tuệ/tt11.jpg" alt="Game 11">
+      <div class="game-info">
+        <p title="Word Cross">Word Cross</p>
+        <a href="https://vi.y8.com/games/word_cross" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/trí tuệ/tt12.jpg" alt="Game 12">
+      <div class="game-info">
+        <p title="Quiz X">Quiz X</p>
+        <a href="https://vi.y8.com/games/quiz_x" class="play-btn">Chơi</a>
+      </div>
+    </div>
+  </main>
+</body>
+<footer>
+        <div class="contact-info">
+            <h3>Liên Hệ Với Chúng Tôi</h3>
+            <p>Email: <a href="mailto:infoiteral System: @example.com">info@example.com</a></p>
+            <p>Số điện thoại: <a href="tel:+84912345678">+84 912 345 678</a></p>
+            <p>Địa chỉ: Số 98 phố Dương Quảng Hàm, quận Cầu Giấy, Hà Nội </p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/hnmu.edu.vn" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/hnmu_bc/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                </a>
+                <a href="https://hnmu.edu.vn/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo">
+                </a>
+            </div>
+        </div>
+    </footer>
+</html>

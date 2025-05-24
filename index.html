@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNT Legacy</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="head-left">
+                <a href="index.html">
+                    <img src="image/logo.png" alt="Trang chủ">
+                </a>
+            </div>
+            <div class="hamburger-menu" id="hamburger-menu">☰</div>
+            <div class="head-center">
+                <a href="index.html">Trang chủ</a>
+                <div class="genre">
+                    <p class="genre-btn">Thể loại <span class="arrow">▼</span></p>
+                    <div class="genre-content">
+                        <a href="nấu ăn.html">Nấu ăn</a>
+                        <a href="thời trang.html">Thời trang</a>
+                        <a href="trang điểm.html">Trang điểm</a>
+                        <a href="đua xe.html">Đua xe</a>
+                        <a href="hành động.html">Hành động</a>
+                        <a href="kinh dị.html">Kinh dị</a>
+                        <a href="trí tuệ.html">Trí tuệ</a>
+                        <a href="thể thao.html">Thể thao</a>
+                    </div>
+                </div>
+                <div class="mode">
+                    <p class="mode-btn">Chế độ <span class="arrow">▼</span></p>
+                    <div class="mode-content">
+                        <a href="1nguoichoi.html">1 người chơi</a>
+                        <a href="2nguoichoi.html">2 người chơi</a>
+                    </div>
+                </div>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Tìm kiếm..." aria-label="Tìm kiếm">
+                <button onclick="searchGames()">Tìm</button>
+            </div>
+            <div class="head-right">
+                <span id="chao-mung"></span>
+                <button id="btn-dang-nhap" onclick="location.href='dangnhap.html'">Đăng nhập</button>
+                <button id="btn-dang-ky" onclick="location.href='dangki.html'">Đăng ký</button>
+                <button id="btn-dang-xuat" style="display: none;">Đăng xuất</button>
+            </div>
+            <script>
+            window.onload = function () {
+                const trangThai = sessionStorage.getItem("trangthai");
+                const tenDangNhap = sessionStorage.getItem("tk");
+
+                const btnDangNhap = document.getElementById("btn-dang-nhap");
+                const btnDangKy = document.getElementById("btn-dang-ky");
+                const btnDangXuat = document.getElementById("btn-dang-xuat");
+                const chaoMung = document.getElementById("chao-mung");
+
+                if (trangThai === "hien" && tenDangNhap) {
+                    btnDangNhap.style.display = "none";
+                    btnDangKy.style.display = "none";
+                    btnDangXuat.style.display = "inline-block";
+                    chaoMung.innerText = "Chào, " + tenDangNhap;
+                } else {
+                    btnDangNhap.style.display = "inline-block";
+                    btnDangKy.style.display = "inline-block";
+                    btnDangXuat.style.display = "none";
+                    chaoMung.innerText = "";
+                }
+
+                btnDangXuat.addEventListener("click", function () {
+                    sessionStorage.clear();
+                    alert("Đăng xuất thành công!");
+                    location.reload();
+                });
+            };
+            </script>
+        </header>
+        <div class="slider">
+            <div class="sliders">
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+                <div class="slide first">
+                    <img src="image/among us.jpg" alt="">
+                    <div class="slide-content">
+                        <h2>Among Us</h2>
+                        <p>Game nhập vai trốn tìm đầy kịch tính và vui nhộn.</p>
+                        <a href="https://vi.y8.com/games/impostor" class="play-btn">Chơi ngay</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="image/valorant.jpg" alt="">
+                    <div class="slide-content">
+                        <h2>Valorant</h2>
+                        <p>Game bắn súng chiến thuật đỉnh cao từ Riot Games.</p>
+                        <a href="https://playvalorant.com/vi-vn/" class="play-btn">Chơi ngay</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="image/genshin.jpg" alt="">
+                    <div class="slide-content">
+                        <h2>Genshin Impact</h2>
+                        <p>Thế giới mở tuyệt đẹp với hành trình khám phá kỳ thú.</p>
+                        <a href="https://now.gg/apps/cognosphere-pte-ltd-/1773/genshin-impact.html" class="play-btn">Chơi ngay</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="image/minecraft.png" alt="">
+                    <div class="slide-content">
+                        <h2>Minecraft</h2>
+                        <p>Thế giới sáng tạo không giới hạn cho mọi lứa tuổi.</p>
+                        <a href="http://y8.com" class="play-btn">Chơi ngay</a>
+                    </div>
+                </div>
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
+                </div>
+                <div class="navigation-manual">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                    <label for="radio4" class="manual-btn"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="category-grid">
+        <a href="nấu ăn.html" class="category-card">
+            <div class="overlay">
+                <img src="image/nấu ăn/nấu.jpg" alt="Nấu ăn">
+                <div class="text-overlay">
+                    <h3>Nấu ăn</h3>
+                    <p>120 game</p>
+                </div>
+            </div>
+        </a>
+        <a href="hành động.html" class="category-card">
+            <div class="overlay">
+                <img src="image/hành động/hành động.jpg" alt="Hành động">
+                <div class="text-overlay">
+                    <h3>Hành động</h3>
+                    <p>120 game</p>
+                </div>
+            </div>
+        </a>
+        <a href="thời trang.html" class="category-card">
+            <div class="overlay">
+                <img src="image/thời trang/thời trang.jpg" alt="Thời trang">
+                <div class="text-overlay">
+                    <h3>Thời trang</h3>
+                    <p>120 game</p>
+                </div>
+            </div>
+        </a>
+        <a href="kinh dị.html" class="category-card">
+            <div class="overlay">
+                <img src="image/kinh dị/kinh dị.png" alt="Kinh dị">
+                <div class="text-overlay">
+                    <h3>Kinh dị</h3>
+                    <p>120 game</p>
+                </div>
+            </div>
+        </a>
+        <a href="trang điểm.html" class="category-card">
+            <div class="overlay">
+                <img src="image/trang điểm/trang điểm.png" alt="Trang điểm">
+                <div class="text-overlay">
+                    <h3>Trang điểm</h3>
+                    <p>120 game</p>
+                </div>
+            </div>
+        </a>
+        <a href="trí tuệ.html" class="category-card">
+            <div class="overlay">
+                <img src="image/trí tuệ/trí tuệ.jpg" alt="Trí tuệ">
+                <div class="text-overlay">
+                    <h3>Trí tuệ</h3>
+                    <p>120 game</p>
+                </div>
+            </div>
+        </a>
+        <a href="đua xe.html" class="category-card">
+            <div class="overlay">
+                <img src="image/đua xe/đua xe.jpg" alt="Đua xe">
+                <div class="text-overlay">
+                    <h3>Đua xe</h3>
+                    <p>120 game</p>
+                </div>
+            </div>
+        </a>
+        <a href="thể thao.html" class="category-card">
+            <div class="overlay">
+                <img src="image/thể thao/thể thao.jpg" alt="Thể thao">
+                <div class="text-overlay">
+                    <h3>Thể thao</h3>
+                    <p>120 game</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</body>
+<footer>
+        <div class="contact-info">
+            <h3>Liên Hệ Với Chúng Tôi</h3>
+            <p>Email: <a href="mailto:infoiteral System: @example.com">info@example.com</a></p>
+            <p>Số điện thoại: <a href="tel:+84912345678">+84 912 345 678</a></p>
+            <p>Địa chỉ: Số 98 phố Dương Quảng Hàm, quận Cầu Giấy, Hà Nội </p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/hnmu.edu.vn" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/hnmu_bc/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                </a>
+                <a href="https://hnmu.edu.vn/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo">
+                </a>
+            </div>
+        </div>
+    </footer>
+</html>

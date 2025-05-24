@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thể loại - Kinh dị</title>
+  <link rel="stylesheet" href="hienthi.css">
+  <script src="main.js"></script>
+</head>
+<body>
+  <header>
+    <div class="head-left">
+        <a href="index.html">
+        <img src="image/logo.png" alt="Trang chủ">
+        </a>
+    </div>
+    <div class="hamburger-menu" id="hamburger-menu">☰</div>
+    <div class="head-center">
+      <a href="index.html">Trang chủ</a>
+      <div class="genre">
+        <p class="genre-btn">Thể loại <span class="arrow">▼</span></p>
+        <div class="genre-content">
+          <a href="nấu ăn.html">Nấu ăn</a>
+          <a href="thời trang.html">Thời trang</a>
+          <a href="trang điểm.html">Trang điểm</a>
+          <a href="đua xe.html">Đua xe</a>
+          <a href="hành động.html">Hành động</a>
+          <a href="kinh dị.html">Kinh dị</a>
+          <a href="trí tuệ.html">Trí tuệ</a>
+          <a href="thể thao.html">Thể thao</a>
+        </div>
+      </div>
+
+      <div class="mode">
+        <p class="mode-btn">Chế độ <span class="arrow">▼</span></p>
+        <div class="mode-content">
+          <a href="1nguoichoi.html">1 người chơi</a>
+          <a href="2nguoichoi.html">2 người chơi</a>
+        </div>
+      </div>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Tìm kiếm..." aria-label="Tìm kiếm">
+      <button onclick="searchGames()">Tìm</button>
+    </div>
+    <div class="head-right">
+                <span id="chao-mung"></span>
+                <button id="btn-dang-nhap" onclick="location.href='dangnhap.html'">Đăng nhập</button>
+                <button id="btn-dang-ky" onclick="location.href='dangki.html'">Đăng ký</button>
+                <button id="btn-dang-xuat" style="display: none;">Đăng xuất</button>
+            </div>
+            <script>
+            window.onload = function () {
+                const trangThai = sessionStorage.getItem("trangthai");
+                const tenDangNhap = sessionStorage.getItem("tk");
+
+                const btnDangNhap = document.getElementById("btn-dang-nhap");
+                const btnDangKy = document.getElementById("btn-dang-ky");
+                const btnDangXuat = document.getElementById("btn-dang-xuat");
+                const chaoMung = document.getElementById("chao-mung");
+
+                if (trangThai === "hien" && tenDangNhap) {
+                    btnDangNhap.style.display = "none";
+                    btnDangKy.style.display = "none";
+                    btnDangXuat.style.display = "inline-block";
+                    chaoMung.innerText = "Chào, " + tenDangNhap;
+                } else {
+                    btnDangNhap.style.display = "inline-block";
+                    btnDangKy.style.display = "inline-block";
+                    btnDangXuat.style.display = "none";
+                    chaoMung.innerText = "";
+                }
+
+                btnDangXuat.addEventListener("click", function () {
+                    sessionStorage.clear();
+                    alert("Đăng xuất thành công!");
+                    location.reload();
+                });
+            };
+            </script>
+  </header>
+
+  <div class="category-card cooking">
+    <div class="category-info">
+      <h2>Kinh dị</h2>
+      <p>120 game</p>
+    </div>
+    <img src="image/kinh dị/kinh dị.png" alt="Kinh dị">
+  </div>
+
+
+  <main class="game-grid">
+    <div class="game-card">
+      <img src="image/kinh dị/kd1.jpg" alt="Game 1">
+      <div class="game-info">
+        <p title="Zombie Sacrifice">Zombie Sacrifice</p>
+        <a href="https://www.y8.com/games/zombie_sacrifice" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd2.jpg" alt="Game 2">
+      <div class="game-info">
+        <p title="The Malevolent Mansion of Evil">The Malevolent Mansion of Evil</p>
+        <a href="https://www.y8.com/games/the_malevolent_mansion_of_evil" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd3.jpg" alt="Game 3">
+      <div class="game-info">
+        <p title="Slendrina Must Die: The School">Slendrina Must Die: The School</p>
+        <a href="https://www.y8.com/games/slendrina_must_die_the_school" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd4.jpg" alt="Game 4">
+      <div class="game-info">
+        <p title="The House Of Evil Granny">The House Of Evil Granny</p>
+        <a href="https://www.y8.com/games/the_house_of_evil_granny" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd5.jpg" alt="Game 5">
+      <div class="game-info">
+        <p title="Forest Monsters">Forest Monsters</p>
+        <a href="https://www.y8.com/games/forest_monsters" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd6.jpg" alt="Game 6">
+      <div class="game-info">
+        <p title="Darkness in spaceship">Darkness in spaceship</p>
+        <a href="https://www.y8.com/games/darkness_in_spaceship" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd7.jpg" alt="Game 7">
+      <div class="game-info">
+        <p title="Jeff The Killer - Horrendous Smile">Jeff The Killer - Horrendous Smile</p>
+        <a href="https://www.y8.com/games/jeff_the_killer_horrendous_smile" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd8.jpg" alt="Game 8">
+      <div class="game-info">
+        <p title="Shoot Your Nightmare: The Beginning">Shoot Your Nightmare: The Beginning</p>
+        <a href="https://www.y8.com/games/shoot_your_nightmare_the_beginning" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd9.jpg" alt="Game 9">
+      <div class="game-info">
+        <p title="Zombie Island 3D">Zombie Island 3D</p>
+        <a href="https://www.y8.com/games/zombie_island_3d" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd10.jpg" alt="Game 10">
+      <div class="game-info">
+        <p title="Toys Shooter: You Vs Zombies">Toys Shooter: You Vs Zombies</p>
+        <a href="https://www.y8.com/games/toys_shooter_you_vs_zombies" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd11.jpg" alt="Game 11">
+      <div class="game-info">
+        <p title="Ghost City">Ghost City</p>
+        <a href="https://www.y8.com/games/ghost_city" class="play-btn">Chơi</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="image/kinh dị/kd12.jpg" alt="Game 12">
+      <div class="game-info">
+        <p title="Cave War">Cave War</p>
+        <a href="https://www.y8.com/games/cave_war" class="play-btn">Chơi</a>
+      </div>
+    </div>
+  </main>
+</body>
+<footer>
+        <div class="contact-info">
+            <h3>Liên Hệ Với Chúng Tôi</h3>
+            <p>Email: <a href="mailto:infoiteral System: @example.com">info@example.com</a></p>
+            <p>Số điện thoại: <a href="tel:+84912345678">+84 912 345 678</a></p>
+            <p>Địa chỉ: Số 98 phố Dương Quảng Hàm, quận Cầu Giấy, Hà Nội </p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/hnmu.edu.vn" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/hnmu_bc/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                </a>
+                <a href="https://hnmu.edu.vn/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo">
+                </a>
+            </div>
+        </div>
+    </footer>
+</html>
